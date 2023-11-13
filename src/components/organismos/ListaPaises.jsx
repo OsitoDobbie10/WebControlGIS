@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {v,InputBuscadorLista,ConvertirCapitalize,UseContext1,Device} from "../../index"
+import {v,InputBuscadorLista,ConvertirCapitalize,UseContext1,Device,Btncerrar} from "../../index"
 import iso from "iso-country-currency";
 const ListaPaises = ({setSelect,setStade}) => {
     const {dataresult,setDataresult} = UseContext1();
@@ -18,7 +18,7 @@ const ListaPaises = ({setSelect,setStade}) => {
     <Container>
       <header className='header'>
         <span>Busca tu Pais</span>
-        <span className='close' onClick={setStade}>{<v.iconocerrar/>}</span>
+        <Btncerrar funcion={setStade}/>
       </header>
       <InputBuscadorLista onchange={buscar} placefolder="Buscar..."/>
       {
@@ -47,6 +47,7 @@ padding: 10px;
 gap:10px;
 color:${({theme})=>theme.text};
 transition: all 0.3s;
+z-index: 1000;
 @media ${Device.tablet}{
   width: 400px;
 }

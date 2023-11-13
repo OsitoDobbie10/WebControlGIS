@@ -40,6 +40,8 @@ const ContextLogin1 = ({children}) => {
     const [listaPaises,setlistaPaises] = useState(false);
     const [dataresult,setDataresult] = useState([]);
     const [select,setSelect] = useState([]);
+    const [selecttema,setSelecttema] = useState(false);
+    const [tema,setTema] = useState([]);
   return (
     <ThemeContext.Provider value={{
         theme,
@@ -70,7 +72,9 @@ const ContextLogin1 = ({children}) => {
         abrir,setAbrir,
         listaPaises,setlistaPaises,
         dataresult,setDataresult,
-        select,setSelect
+        select,setSelect,
+        selecttema,setSelecttema,
+        tema,setTema
     }}>
       {children}
     </ThemeContext.Provider>

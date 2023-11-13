@@ -1,4 +1,5 @@
 export { default as App } from './App';
+export { default as Btncerrar } from './components/atomos/Btncerrar';
 export * from './components/atomos/ContentHeader';
 export * from './components/atomos/Iconos';
 export { default as InputBuscadorLista } from './components/atomos/InputBuscadorLista';
@@ -6,6 +7,7 @@ export { default as BTNSave } from './components/moleculas/BTNSave';
 export { default as BtnCirculas } from './components/moleculas/BtnCirculas';
 export { default as ItemMenuDesplegable } from './components/moleculas/ItemMenuDesplegable';
 export { default as ListaMenuDespegable } from './components/moleculas/ListaMenuDespegable';
+export { default as Listagenerica } from './components/moleculas/Listagenerica';
 export { default as DataUser } from './components/organismos/DataUser';
 export { default as Header } from './components/organismos/Header';
 export { default as Layout } from './components/organismos/Layout';
