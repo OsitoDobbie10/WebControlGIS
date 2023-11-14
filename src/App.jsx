@@ -8,12 +8,12 @@ function App() {
     const {changeTheme} = UseContext1()
     const {showUsers} = UseUsuarioStore();
     const {isLoading,isError,data} = useQuery({queryKey:["Mostrar usuarios"],queryFn:()=>showUsers()});
-    if(isLoading){
+    /*if(isLoading){
         return <h1>Cargando...</h1>
     }
     if(isError){
         return <h1>Errore...</h1>
-    }
+    }*/
 return (
 <>
 <ThemeProvider theme={changeTheme}>
