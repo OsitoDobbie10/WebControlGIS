@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components';
 import {v,Formulario1,UseContext1} from "../../index"
 import { Link } from 'react-router-dom';
@@ -7,7 +6,7 @@ const LoginTempledes = () => {
   return (
     <Container bgfondo={v.FONDOLOGIN}>
       <h3 className='showError'>{logic1}</h3>
-      <Base>
+      <Base> 
         <Titulo>Vista datos confidenciales..</Titulo>
         <img className="imglogin" src={v.logo} alt="Imagen" />
         <Parrafo>Escribe tus credenciales para ingresar...</Parrafo>
