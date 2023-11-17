@@ -36,6 +36,7 @@ export { default as Configuracion, } from './pages/Configuracion,';
 export { default as ErrorsingUp } from './pages/ErrorsingUp';
 export { default as Home } from './pages/Home';
 export { default as Login } from './pages/Login';
+export { default as Mapa } from './pages/Mapa';
 export { default as Perfil } from './pages/Perfil';
 export { default as SingUp } from './pages/SingUp';
 export * from './routers/routes';

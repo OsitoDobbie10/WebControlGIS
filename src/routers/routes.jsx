@@ -1,8 +1,8 @@
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
-import {SingUp,Home,Login,UseContext1,ErrorsingUp,Categorias,Layout2,Configuracion,Perfil} from "../index"
-export const MyRoutes = (props)=>{
-    const {data} = props;
-    const {token} = UseContext1();
+import {SingUp,Home,Login,UseContext1,ErrorsingUp,Categorias,Layout2,Configuracion,Perfil, Mapa} from "../index"
+export const MyRoutes = ()=>{
+    //const {data} = props;
+    //const {token} = UseContext1();
     const MyRuta = createBrowserRouter([
         {
             path: "/",
@@ -18,44 +18,8 @@ export const MyRoutes = (props)=>{
             element: <ErrorsingUp/>
         },
         {
-            path: "/Home",
-            element:<Layout2/>,
-            children:[
-                {
-                    index:true,
-                    element: token ? <Home/> : ""
-                }
-            ]
-        },
-        {
-            path:"/categorias",
-            element:<Layout2/>,
-            children:[
-                {
-                    index:true,
-                    element:<Categorias/>
-                }
-            ]
-        },
-        {
-            path:"/configurar",
-            element: <Layout2/>,
-            children:[
-                {
-                    index:true,
-                    element: <Configuracion data={data}/>
-                }
-            ]
-        },
-        {
-            path:"/miperfil",
-            element: <Layout2/>,
-            children:[
-                {
-                    index:true,
-                    element: <Perfil/>
-                }
-            ]
+            path:'/Home',
+            element:<Mapa/>
         }
        
     ])

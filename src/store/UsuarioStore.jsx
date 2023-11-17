@@ -1,6 +1,6 @@
 import {create} from "zustand";
 import {MostrarUsuarios} from "../index";
-export const UseUsuarioStore = create((get,set)=>({
+export const UseUsuarioStore = create((set)=>({
     usuarios: [],
     showUsers: async()=>{
         const reponse = await MostrarUsuarios();

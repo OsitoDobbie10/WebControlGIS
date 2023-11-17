@@ -8,7 +8,7 @@ const LoginTempledes = () => {
     <Container bgfondo={v.FONDOLOGIN}>
       <h3 className='showError'>{logic1}</h3>
       <Base>
-        <Titulo>Control de gastos e ingresos GIS..</Titulo>
+        <Titulo>Vista datos confidenciales..</Titulo>
         <img className="imglogin" src={v.logo} alt="Imagen" />
         <Parrafo>Escribe tus credenciales para ingresar...</Parrafo>
         <Formulario1/>
