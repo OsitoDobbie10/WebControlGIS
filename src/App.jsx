@@ -7,18 +7,18 @@ import {UseUsuarioStore} from "./index"
 function App() {
     const {changeTheme} = UseContext1()
     const {showUsers} = UseUsuarioStore();
-    //const {isLoading,isError,data} = useQuery({queryKey:["Mostrar usuarios"],queryFn:()=>showUsers()});
-    /*if(isLoading){
+    const {isLoading,isError,data} = useQuery({queryKey:["Mostrar usuarios"],queryFn:()=>showUsers()});
+    if(isLoading){
         return <h1>Cargando...</h1>
     }
     if(isError){
         return <h1>Errore...</h1>
-    }*/
-    //data={data}
+    }
+  
 return (
 <>
 <ThemeProvider theme={changeTheme}>
-<MyRoutes/>
+<MyRoutes data={data}/>
 <ReactQueryDevtools initialIsOpen={true}/>
 </ThemeProvider>
 </>
