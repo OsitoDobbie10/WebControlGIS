@@ -40,7 +40,7 @@ top:88%;
 width: 100%;
 display: flex;
 flex-direction: column;
-background-color: ${({theme})=>theme.bgtotsl};
+background-color:#000;
 border-radius: 10px;
 border:2px solid #3a3a3a;
 padding: 10px;
