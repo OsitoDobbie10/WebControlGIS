@@ -47,7 +47,7 @@ padding: 10px;
 gap:10px;
 color:${({theme})=>theme.text};
 transition: all 0.3s;
-z-index: 1000;
+z-index: 2000;
 @media ${Device.tablet}{
   width: 400px;
 }

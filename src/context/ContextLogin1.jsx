@@ -7,7 +7,7 @@ const ContextLogin1 = ({children}) => {
     const [datos,setDatos] = useState({
       nombre:"",
       email:"",
-      password: ""
+      password: "" 
     });
     const [pass,setPass] = useState('');
     const [logic1,setLogic1] = useState(null);
@@ -23,7 +23,6 @@ const ContextLogin1 = ({children}) => {
     const changepass = (e)=>{
       setPass(e.target.value);
     }
-    const changeTheme = theme === "light" ? Light : Dark;
     const RefPass = useRef(true);
     const [vista,setVista] = useState(false)
     const [token,setToken] = useState(false);
@@ -48,7 +47,6 @@ const ContextLogin1 = ({children}) => {
         setTheme,
         intro,
         setIntro,
-        changeTheme,
         datos,
         setDatos,
         obtenerDatos,

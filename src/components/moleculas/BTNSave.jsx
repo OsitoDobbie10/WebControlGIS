@@ -28,6 +28,7 @@ background-color: initial;
   transition: 0.2s;
   white-space: 1px;
   color:black;
+  z-index: 1000;
   cursor: pointer;
   &:hover{
     box-shadow: 0.15em 0.15em #000;

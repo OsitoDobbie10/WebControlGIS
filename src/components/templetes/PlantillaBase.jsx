@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 import {Header} from "../../index"
+import {ContentFilters,BTNdesplegable} from "../../index"
 const PlantillaBase = () => {
   return (
     <Container>
       <header className='header'>
       <Header/> 
       </header>
-      <section className='area1'>
-      <h1>Ajustes</h1>
+      <section className='tipo'>
+      <ContentFilters>
+      <BTNdesplegable/>
+      </ContentFilters>
       </section>
       <section className='area2'>
       <ContentCard>
@@ -28,7 +31,7 @@ background-color: ${({theme}) =>theme.bgtotal};
 color: ${({theme})=> theme.text};
 display: grid;
 grid-template: "header" 100px
-                "area1" 100px
+                "tipo" 100px
                 "area2" 50px
                 "main" auto;
 .header{
@@ -37,8 +40,8 @@ grid-template: "header" 100px
     display: flex;
     align-items: center;
 }
-.area1{
-    grid-area:area1;
+.tipo{
+    grid-area:tipo;
     background-color: rgb(229,67,26,0.14);
     display: flex;
     align-items: center;
