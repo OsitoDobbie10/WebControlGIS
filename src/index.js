@@ -43,6 +43,7 @@ export { default as Mapa } from './pages/Mapa';
 export { default as Perfil } from './pages/Perfil';
 export { default as SingUp } from './pages/SingUp';
 export * from './routers/routes';
+export * from './store/OperacionesStore';
 export * from './store/UsuarioStore';
 export * from './styles/Breakpoints';
 export * from './styles/themes';

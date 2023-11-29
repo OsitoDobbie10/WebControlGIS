@@ -7,7 +7,6 @@ const ItemMenuDesplegable = ({item,acciones}) => {
     <Container onClick={acciones}>
       <Icono>{icono}</Icono>
       <span>{text}</span>
-      
     </Container>
   )
 }

@@ -1,7 +1,14 @@
 import styled from 'styled-components';
 import {Header} from "../../index"
-import {ContentFilters,BTNdesplegable} from "../../index"
+import {ContentFilters,BTNdesplegable,UseOperaciones,ListaMenuDespegable,DataDesplegableTipo} from "../../index"
 const PlantillaBase = () => {
+  const titulo = UseOperaciones(stade=>stade.titulosBTN);
+  const colorCat = UseOperaciones(stade=>stade.colorCategoria);
+  const bgcat = UseOperaciones(stade=>stade.bgCategoerias);
+  const actualizar = UseOperaciones(stade=>stade.setTipo);
+  const cambiarTipo = (p)=>{
+    actualizar(p);
+  }
   return (
     <Container>
       <header className='header'>
@@ -9,7 +16,8 @@ const PlantillaBase = () => {
       </header>
       <section className='tipo'>
       <ContentFilters>
-      <BTNdesplegable/>
+      <BTNdesplegable text={titulo} inputcolor={bgcat} textcolor={colorCat}/>
+      <ListaMenuDespegable data={DataDesplegableTipo} acciones={(p)=>cambiarTipo(p)}/>
       </ContentFilters>
       </section>
       <section className='area2'>
