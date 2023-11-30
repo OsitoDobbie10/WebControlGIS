@@ -1,10 +1,12 @@
 export { default as App } from './App';
 export { default as Btncerrar } from './components/atomos/Btncerrar';
 export * from './components/atomos/ColorContext';
+export * from './components/atomos/ContentFiltro';
 export * from './components/atomos/ContentHeader';
 export * from './components/atomos/CustomFilters';
 export * from './components/atomos/Iconos';
 export { default as InputBuscadorLista } from './components/atomos/InputBuscadorLista';
+export { default as BTNBoton } from './components/moleculas/BTNBoton';
 export { default as BTNSave } from './components/moleculas/BTNSave';
 export { default as BTNdesplegable } from './components/moleculas/BTNdesplegable';
 export { default as BtnCirculas } from './components/moleculas/BtnCirculas';

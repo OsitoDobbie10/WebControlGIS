@@ -41,6 +41,7 @@ const ContextLogin1 = ({children}) => {
     const [select,setSelect] = useState([]);
     const [selecttema,setSelecttema] = useState(false);
     const [tema,setTema] = useState([]);
+    const [statetipo,setStadeTipo] = useState(false);
     
   return (
     <ThemeContext.Provider value={{
@@ -73,7 +74,8 @@ const ContextLogin1 = ({children}) => {
         dataresult,setDataresult,
         select,setSelect,
         selecttema,setSelecttema,
-        tema,setTema
+        tema,setTema,
+        statetipo,setStadeTipo
     }}>
       {children}
     </ThemeContext.Provider>

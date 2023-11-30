@@ -1,29 +1,40 @@
 import styled from 'styled-components';
-import {Header} from "../../index"
-import {ContentFilters,BTNdesplegable,UseOperaciones,ListaMenuDespegable,DataDesplegableTipo} from "../../index"
+import {Header, v,ContentFilters,BTNdesplegable,UseOperaciones,
+        ListaMenuDespegable,DataDesplegableTipo,
+        UseContext1,ContentFiltro,BTNBoton} from "../../index"
 const PlantillaBase = () => {
   const titulo = UseOperaciones(stade=>stade.titulosBTN);
   const colorCat = UseOperaciones(stade=>stade.colorCategoria);
   const bgcat = UseOperaciones(stade=>stade.bgCategoerias);
   const actualizar = UseOperaciones(stade=>stade.setTipo);
+  const {statetipo,setStadeTipo} = UseContext1();
   const cambiarTipo = (p)=>{
     actualizar(p);
+    setStadeTipo(!statetipo);
+  }
+  const changeTipo = ()=>{
+    setStadeTipo(!statetipo);
+  }
+  const cambios = ()=>{
+    setStadeTipo(false);
   }
   return (
-    <Container>
+    <Container onClick={cambios}>
       <header className='header'>
       <Header/> 
       </header>
       <section className='tipo'>
       <ContentFilters>
-      <BTNdesplegable text={titulo} inputcolor={bgcat} textcolor={colorCat}/>
-      <ListaMenuDespegable data={DataDesplegableTipo} acciones={(p)=>cambiarTipo(p)}/>
+      <div onClick={(e)=>{e.stopPropagation()}}>
+      <BTNdesplegable text={titulo} inputcolor={bgcat} textcolor={colorCat} funcion={changeTipo} />
+      {statetipo && (<ListaMenuDespegable data={DataDesplegableTipo} acciones={(p)=>cambiarTipo(p)}/>)}
+      </div>
       </ContentFilters>
       </section>
       <section className='area2'>
-      <ContentCard>
-      <span>Moneda:</span>
-      </ContentCard>
+      <ContentFiltro>
+      <BTNBoton bgcolor={bgcat} textcolor={colorCat} icono={<v.agregar/>}/>
+      </ContentFiltro>
       </section>
       <section className='main'>
         area3
@@ -59,6 +70,7 @@ grid-template: "header" 100px
     background-color: rgb(77,237,106,0.14);
     display: flex;
     align-items: center;
+    justify-content: end;
 }
 .main{
     grid-area:main;
