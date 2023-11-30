@@ -7,9 +7,8 @@ export const UseOperaciones = create((set,get)=>({
     bgCategoerias: ()=>v.colorbgingresos,
     setTipo: (p)=>{
       set({titulo:p});
-      const {titulo} = get();
-      set({titulosBTN: titulo == "i" ? "Categorias ingresos" : "Categorias egresos"});
-      set({colorCategoria: titulo == "i" ? v.colorIngresos : v.colorGastos});
-      set({bgCategoerias: titulo == "i" ? v.colorbgingresos : v.colorbgGastos});
+      set({titulosBTN: p.text});
+      set({colorCategoria: p.color});
+      set({bgCategoerias:p.bgcolor});
     }}
     )); 

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import React from 'react'
-import {Icono} from "../../index"
+import {Icono,ColorContext} from "../../index"
 const ItemMenuDesplegable = ({item,acciones}) => {
   const {text,icono,tipo} = item;
   return (
     <Container onClick={acciones}>
       <Icono>{icono}</Icono>
+      <ColorContext $alto="12px" $ancho="12px" $color={item.color} />
       <span>{text}</span>
     </Container>
   )
@@ -18,7 +19,7 @@ display: flex;
 align-items: center;
 gap:10px;
 &:hover{
-  background-color: ${({theme})=>theme.bg4};
+  background-color: rgba(0,0,0,0.7);
 }
 svg{
   font-size: 28px;

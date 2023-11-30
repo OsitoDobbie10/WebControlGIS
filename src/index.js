@@ -1,5 +1,6 @@
 export { default as App } from './App';
 export { default as Btncerrar } from './components/atomos/Btncerrar';
+export * from './components/atomos/ColorContext';
 export * from './components/atomos/ContentHeader';
 export * from './components/atomos/CustomFilters';
 export * from './components/atomos/Iconos';
