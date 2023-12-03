@@ -27,9 +27,9 @@ export const InsertarCategorias = async(p)=>{
 
 }
 
-export const MostrarCategorias = async(idusario)=>{
+export const MostrarCategorias = async(p)=>{
     try {
-        const{data} = await supabase2.from("categorias").select().eq("idusuario",idusario).eq("tipo",p.tipo).order("id",{ascending:true});
+        const{data} = await supabase2.from("categorias").select().eq("idusuario",p.idusario).eq("tipo",p.tipo).order("id",{ascending:true});
         return data;
     } catch (error) {
         alert("Error al mostrar las categorias");
@@ -44,5 +44,17 @@ export const BorrarCategorias = async(p)=>{
         }
     } catch (error) {
         alert(error.error_description || error.message + "eliminar categorias")   
+    }
+}
+
+export const EditarCategorias = async(p)=>{
+    try {
+        const {data,error} = await supabase2.from("categorias").update().eq("idusuario",p.idusuario).eq("id",p.id);
+        if(error){
+            alert("error al editar",error)
+        }
+    } catch (error) {
+        alert(error.error_description || error.message + "editar");
+        
     }
 }

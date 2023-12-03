@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import {Header, v,ContentFilters,BTNdesplegable,UseOperaciones,
         ListaMenuDespegable,DataDesplegableTipo,
-        UseContext1,ContentFiltro,BTNBoton} from "../../index"
-const PlantillaBase = () => {
+        UseContext1,ContentFiltro,BTNBoton,TablaCategorias} from "../../index"
+import { ErrorBoundary } from 'react-app-error-boundary';
+const PlantillaBase = ({data}) => {
   const titulo = UseOperaciones(stade=>stade.titulosBTN);
   const colorCat = UseOperaciones(stade=>stade.colorCategoria);
   const bgcat = UseOperaciones(stade=>stade.bgCategoerias);
@@ -37,7 +38,9 @@ const PlantillaBase = () => {
       </ContentFiltro>
       </section>
       <section className='main'>
-        area3
+      <ErrorBoundary>
+      <TablaCategorias data={data}/>
+      </ErrorBoundary>
       </section>
     </Container>
   )

@@ -9,8 +9,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
   <ContextLogin1>
   <QueryClientProvider client={queryClient}>
-   <App />
-  </QueryClientProvider>
+   <App/>
+   </QueryClientProvider>
   </ContextLogin1>
   </React.StrictMode>,
 )

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import {PlantillaBase} from "../../index"
-const CategoriasTempleted = () => {
+const CategoriasTempleted = ({data}) => {
   return (
     <Container>
-    <PlantillaBase/>
+    <PlantillaBase data={data}/>
     </Container>
   )
 }

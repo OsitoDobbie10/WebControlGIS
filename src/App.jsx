@@ -9,17 +9,18 @@ function App() {
     const {theme,setThem} = UseContext1();
     const tema = usuarios.tema ==="0"?"light":"dark";
     const changeTheme = tema === "light" ? Light : Dark;
-    const {isLoading,isError,data} = useQuery({queryKey:["Mostrar usuarios"],queryFn:()=>showUsers()});
+    const {isLoading,isError,data} = useQuery({queryKey:["Mostrar"],queryFn:()=>showUsers()});
    if(isLoading){
         return <h1>Cargando...</h1>
     }
     if(isError){
         return <h1>Error...</h1>
+        
     }
 return (
 <>
 <ThemeProvider theme={changeTheme}>
-<MyRoutes data={data}/>
+<MyRoutes data={usuarios}/>
 <ReactQueryDevtools initialIsOpen={true}/>
 </ThemeProvider>
 </>

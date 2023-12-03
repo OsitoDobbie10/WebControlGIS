@@ -12,4 +12,4 @@ export const UseUsuarioStore = create((set,get)=>({
         const {showUsers} = get();
         set(showUsers);
     }
-}));
+})); 
