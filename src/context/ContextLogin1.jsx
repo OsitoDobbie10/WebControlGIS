@@ -42,7 +42,9 @@ const ContextLogin1 = ({children}) => {
     const [selecttema,setSelecttema] = useState(false);
     const [tema,setTema] = useState([]);
     const [statetipo,setStadeTipo] = useState(false);
-    
+    const [openRegister,setOpenRegister] = useState(false);
+    const [accion,setAccion] = useState("");
+    const [abrir2,setAbrir2] = useState(false);
   return (
     <ThemeContext.Provider value={{
         theme,
@@ -75,7 +77,10 @@ const ContextLogin1 = ({children}) => {
         select,setSelect,
         selecttema,setSelecttema,
         tema,setTema,
-        statetipo,setStadeTipo
+        statetipo,setStadeTipo,
+        openRegister,setOpenRegister,
+        accion,setAccion,
+        abrir2,setAbrir2
     }}>
       {children}
     </ThemeContext.Provider>

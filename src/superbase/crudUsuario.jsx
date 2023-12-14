@@ -12,7 +12,7 @@ export const InsertarUsuarios = async(p)=>{
 export const MostrarUsuarios = async()=>{
     try {
         const idaouthsupabase = await ObtenerIdAuthSupabase();
-        const {error,data} = await supabase2.from("Usuarios").select().eq("idaouthsupabase",idaouthsupabase)
+        const {error,data} = await supabase2.from("Usuarios").select().eq("idaouthsupabase",idaouthsupabase);
         if(error){
             alert("MostrarUusarios",error);
         }

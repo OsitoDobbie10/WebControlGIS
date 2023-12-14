@@ -6,10 +6,11 @@ import {
 import {v} from "../styles//variables";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import Paginacion from "../Tablas/Paginacion";
 export function TablaCategorias({
   data,
-  SetopenRegistro,
-  setdataSelect,
+  setOpenRegister,
+  setDataselect,
   setAccion,
 }) {
   const [pagina, setPagina] = useState(1);
@@ -33,9 +34,10 @@ export function TablaCategorias({
     });
   }
   function editar(data) {
-    SetopenRegistro(true);
-    setdataSelect(data);
+    setOpenRegister(true);
+    setDataselect(data);
     setAccion("Editar");
+    
   }
   return (
     <>
@@ -78,6 +80,7 @@ export function TablaCategorias({
               })}
           </tbody>
         </table>
+        <Paginacion pagina={pagina} setPagina={setPagina} maximo={maximo}/>
       </Container>
     </>
   );

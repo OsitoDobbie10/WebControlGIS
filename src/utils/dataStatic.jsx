@@ -10,7 +10,7 @@ import {TbPig} from "react-icons/tb"
 
 export const DesplegableUser = [
   {
-    text: "Mi perfil",
+    text: "Mi perfil 2",
     icono: <v.iconoUser/>,
     tipo: "miperfil",
   },

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {ContentHeader,DataUser,UseContext1} from "../../index"
+import {ContentHeader,DataUser} from "../../index"
 const Header = () => {
   return (
     <ContentHeader>

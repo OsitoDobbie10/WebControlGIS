@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Header,Selector,UseContext1,v,ListaPaises,
+import {Header2,Selector,UseContext1,v,ListaPaises,
         ObtenerIdAuthSupabase,UseUsuarioStore,Listagenerica,TemasData,BTNSave} from "../../index"
 const ConfigTempletes = ({data}) => {
   const {listaPaises,setlistaPaises,select,setSelect,selecttema,setSelecttema,tema,setTema} = UseContext1();
@@ -27,7 +27,7 @@ const editardata = async()=>{
   return (
     <Container>
       <header className='header'>
-      <Header/> 
+      <Header2/> 
       </header>
       <section className='area1'>
       <h1>Ajustes</h1>
