@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import {InsertarCategorias,MostrarCategorias,EditarCategorias,BorrarCategorias} from "../index";
+import {InsertarCategorias,MostrarCategorias,EditarCategorias,BorrarCategorias,BorrarCategoriasTodas} from "../index";
 
 export const UseCategorias = create((set,get)=>({
     datacategorias: [],
@@ -15,10 +15,17 @@ export const UseCategorias = create((set,get)=>({
     editarcategorias:async(p)=>{
         await EditarCategorias(p);
         const {mostrarcategorias} = get();
+        location.reload();
         set(mostrarcategorias(p)); 
     },
     eliminarcategorias: async(p)=>{
         await BorrarCategorias(p);
+        const {mostrarcategorias} = get();
+        location.reload();
+        set(mostrarcategorias(p));
+    },
+    eliminarCategoriasTodas: async(p)=>{
+        await BorrarCategoriasTodas(p);
         const {mostrarcategorias} = get();
         location.reload();
         set(mostrarcategorias(p));

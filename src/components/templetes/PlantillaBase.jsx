@@ -72,26 +72,26 @@ grid-template: "header" 100px
                 "main" auto;
 .header{
     grid-area:header;
-    background-color: rgb(103,93,241,0.14);
+    /*background-color: rgb(103,93,241,0.14);*/
     display: flex;
     align-items: center;
 }
 .tipo{
     grid-area:tipo;
-    background-color: rgb(229,67,26,0.14);
+    /*background-color: rgb(229,67,26,0.14);*/
     display: flex;
     align-items: center;
 }
 .area2{
     grid-area:area2;
-    background-color: rgb(77,237,106,0.14);
+    /*background-color: rgb(77,237,106,0.14);*/
     display: flex;
     align-items: center;
     justify-content: end;
 }
 .main{
     grid-area:main;
-    background-color: purple;
+    /*background-color: purple;*/
     display: flex;
     align-items: center;
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {Header2,Selector,UseContext1,v,ListaPaises,
-        ObtenerIdAuthSupabase,UseUsuarioStore,Listagenerica,TemasData,BTNSave} from "../../index"
+        UseUsuarioStore,Listagenerica,TemasData,BTNSave,CardEliminarTodo} from "../../index"
 const ConfigTempletes = ({data}) => {
   const {listaPaises,setlistaPaises,select,setSelect,selecttema,setSelecttema,tema,setTema} = UseContext1();
   const {usuarios,editarmonedauser} = UseUsuarioStore();
@@ -63,6 +63,7 @@ const editardata = async()=>{
       </ContentCard>
       <BTNSave titulo="Guardar" bgcolor={v.colorSecundario} 
                icono={<v.iconoguardar/>} funcion={editardata} />
+      <CardEliminarTodo/>
       </section>
     </Container>
   )

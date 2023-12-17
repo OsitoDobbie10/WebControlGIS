@@ -55,8 +55,9 @@ export function RegistrarCategorias({ onClose, dataSelect, accion }) {
         descripccion: data.descripcion,
         color: currentColor,
         icono: emojiselect,
+        id: dataSelect.id,
         idusuario: usuarios.id,
-        tipo: tipo,
+        tipo: tipo, 
       };
       try {
         setEstadoproceso(true);
@@ -76,15 +77,6 @@ export function RegistrarCategorias({ onClose, dataSelect, accion }) {
       setColor(dataSelect.color);
     } 
   }, []);
-  const p = {
-    descripccion: data.descripcion,
-    color: currentColor,
-    icono: emojiselect,
-    id: dataSelect.id,
-    idusuario:usuarios.id,
-    tipo: tipo,
-  };
-  console.log(p);
   return (
     <Container>
       {estadoProceso && <Spinner />}

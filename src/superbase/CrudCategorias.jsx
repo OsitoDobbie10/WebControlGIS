@@ -49,12 +49,30 @@ export const BorrarCategorias = async(p)=>{
 
 export const EditarCategorias = async(p)=>{
     try {
-        const {data,error} = await supabase2.from("categorias").update().eq("idusuario",p.idusuario).eq("id",p.id);
+        const {data,error} = await supabase2.from("categorias").update(p).eq("idusuario",p.idusuario).eq("id",p.id);
         if(error){
             alert("error al editar",error)
         }
     } catch (error) {
         alert(error.error_description || error.message + "editar");
         
+    }
+}
+
+export const BorrarCategoriasTodas = async(p)=>{
+    try {
+        const {error} = await supabase2.from("categorias").delete().eq("idusuario",p.idusuario);
+        if(error){
+            alert("error al eliminar",error);
+        }
+        Swal.fire({
+            position:"top-end",
+            icon: "success",
+            title: "Datos Reseteados",
+            showConfirmButton: false,
+            timer: 1000,
+          });
+    } catch (error) {
+        alert(error.error_description || error.message + "eliminar categorias")   
     }
 }

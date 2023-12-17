@@ -1,5 +1,6 @@
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
-import {SingUp,Home,Login,UseContext1,ErrorsingUp,Categorias,Layout2,Configuracion,Perfil, Mapa} from "../index"
+import {SingUp,Home,Login,UseContext1,ErrorsingUp,
+        Categorias,Layout2,Configuracion,Perfil,Movimientos} from "../index"
 export const MyRoutes = (props)=>{
     const {data} = props;
     const {token} = UseContext1();
@@ -56,7 +57,18 @@ export const MyRoutes = (props)=>{
                     element: <Perfil/>
                 }
             ]
+        },
+        {
+            path:"/movimientos",
+            element: <Layout2/>,
+            children:[
+                {
+                    index:true,
+                    element: <Movimientos/>
+                }
+            ]
         }
+
        
     ])
     return(

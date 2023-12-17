@@ -29,6 +29,7 @@ import FondoSingUp from "../assets/FondoSingUp.webp";
 import Cerrar from "../assets/cerrar-sesion.png";
 import LogoSlider from "../assets/gis.png"
 import Imagen from "../assets/UsuarioDentro.png"
+import EliminarImg from "./eliminar.png";
 export const v = {
   sidebarWidth: `300px`,
   sidebarWidthInitial: `10vw`,
@@ -89,5 +90,6 @@ export const v = {
   FONDOSINGUP:FondoSingUp,
   CerrarGIS:Cerrar,
   GIS:LogoSlider,
-  ingresar:Imagen
+  ingresar:Imagen,
+  eliminarImg:EliminarImg
 };
