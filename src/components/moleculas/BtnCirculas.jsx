@@ -12,7 +12,7 @@ const BtnCirculas = (props) => {
     transX={transX}
     transY={transY}
     >
-      <span>{icono}</span>
+    <span>{icono}</span>
     </Container>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {v,BtnCirculas,UseUsuarioStore} from "../../index";
+import {v,UseUsuarioStore,BTNCirular} from "../../index";
 const ContentsTotales = ({ color, total, title, icono }) => {
     const datausuarios = UseUsuarioStore(stade=>stade.usuarios);
   return (
@@ -15,16 +15,7 @@ const ContentsTotales = ({ color, total, title, icono }) => {
         </span>
       </div>
       <div className="contentIcono">
-        <BtnCirculas
-          height="50px"
-          width="50px"
-          bgcolor={color}
-          fontsize="25px"
-          icono={icono}
-          textcolor="#ffffff"
-          translatex="-45px"
-          translatey="-15px"
-        />
+      <BTNCirular icono={icono}/>
       </div>
     </Container>
   )

@@ -1,20 +1,28 @@
 import styled from 'styled-components';
-import {Header2,CalendarioLineal,ContentsTotales,UseOperaciones} from "../../index";
+import {Header2,CalendarioLineal,ContentsTotales,UseOperaciones,v,
+        useMovimientosStore,UseUsuarioStore} from "../../index";
 import dayjs from 'dayjs';
 import { useState } from 'react';
+import { useQuery } from "@tanstack/react-query";
 const PlantillaMovimiento  = ()=>{
     const [value,setValue] = useState(dayjs(Date.now()));
     const [formatoFecha,setFormatoFecha] = useState("");
-    const {titulo,setTipo} = UseOperaciones;
+    const {titulo,setTipo,mes,year} = UseOperaciones();
+    const {mostrarMovimientos,datamovimientos,totalMesAño,totalMesAñoPagados,totalMesAñoPendientes} = useMovimientosStore();
+    const id = UseUsuarioStore(state=>state.idusuario);
+    useQuery({queryKey:["mostrar movimiento por semestre"],queryFn:()=>mostrarMovimientos({año:year,mes:mes,idusuario:id,tipocategoria:titulo})});
 return (
     <Container>
     <header className='header'>
     <Header2/> 
     </header>
     <section className='totales'>
-    <ContentsTotales title={titulo === "g" ? "Gastos Pendientes" : "Ingresos pendientes"}/>
-    <ContentsTotales/>
-    <ContentsTotales/>
+    <ContentsTotales title={titulo === "g" ? "Gastos Pendientes" : "Ingresos pendientes"} 
+                     icono={<v.flechaarribalarga/>}/>
+    <ContentsTotales title={titulo === "g" ? "Gastos Pagados" : "Ingresos pendientes"}
+                     icono={<v.flechaabajolarga/>}/>
+    <ContentsTotales title="Total"
+                     icono={<v.balance/>}/>
     </section>
     <section className='calendario'>
     <CalendarioLineal value={value} setValue={setValue} setFormatoFecha={setFormatoFecha}/>
