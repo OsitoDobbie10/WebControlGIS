@@ -3,6 +3,7 @@ export * from './Tablas/AccionesTabla';
 export * from './Tablas/ContentAccionesTabla';
 export { default as Paginacion } from './Tablas/Paginacion';
 export * from './Tablas/TablaCategorias';
+export * from './Tablas/TablaMovimientos';
 export { default as Btncerrar } from './components/atomos/Btncerrar';
 export * from './components/atomos/ColorContext';
 export * from './components/atomos/ContentFiltro';

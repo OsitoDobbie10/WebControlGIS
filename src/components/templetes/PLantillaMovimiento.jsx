@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {Header2,CalendarioLineal,ContentsTotales,UseOperaciones,v,
-        useMovimientosStore,UseUsuarioStore} from "../../index";
+        useMovimientosStore,UseUsuarioStore,TablaMovimientos} from "../../index";
 import dayjs from 'dayjs';
 import { useState } from 'react';
 import { useQuery } from "@tanstack/react-query";
@@ -18,16 +18,20 @@ return (
     </header>
     <section className='totales'>
     <ContentsTotales title={titulo === "g" ? "Gastos Pendientes" : "Ingresos pendientes"} 
-                     icono={<v.flechaarribalarga/>}/>
+                     icono={<v.flechaarribalarga/>} 
+                      total={totalMesAñoPendientes}/>
     <ContentsTotales title={titulo === "g" ? "Gastos Pagados" : "Ingresos pendientes"}
-                     icono={<v.flechaabajolarga/>}/>
+                     icono={<v.flechaabajolarga/>}
+                      total={totalMesAñoPagados}/>
     <ContentsTotales title="Total"
-                     icono={<v.balance/>}/>
+                     icono={<v.balance/>}
+                     total={totalMesAño}/>
     </section>
     <section className='calendario'>
     <CalendarioLineal value={value} setValue={setValue} setFormatoFecha={setFormatoFecha}/>
     </section>
     <main className='main'>
+    <TablaMovimientos data={datamovimientos}/>
     </main>
     </Container>
 )
@@ -52,6 +56,10 @@ align-items:center;
     /*background-color: rgb(103,93,241,0.14);*/
     display: flex;
     align-items: center;
+    @media (max-width:768px){
+        margin-bottom: 20px;
+
+    }
 }
 .totales{
     width:100%;
@@ -60,6 +68,12 @@ align-items:center;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap:10px;
+    @media (max-width:768px) {
+        flex-direction: column;
+        height:300px;
+    }
+
     
 }
 .calendario{
