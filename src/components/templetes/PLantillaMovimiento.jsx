@@ -1,31 +1,61 @@
 import styled from 'styled-components';
 import {Header2,CalendarioLineal,ContentsTotales,UseOperaciones,v,
-        useMovimientosStore,UseUsuarioStore,TablaMovimientos} from "../../index";
+        useMovimientosStore,UseUsuarioStore,TablaMovimientos,UseCuentas,
+        UseCategorias,ContentFilters,ListaMenuDespegable,DataDesplegableTipo,
+        DataDesplegableMovimientos,UseContext1,BTNDesplegable2,ContentFiltro,BTNBoton} from "../../index";
 import dayjs from 'dayjs';
-import { useState } from 'react';
 import { useQuery } from "@tanstack/react-query";
+import { useState } from 'react';
 const PlantillaMovimiento  = ()=>{
     const [value,setValue] = useState(dayjs(Date.now()));
     const [formatoFecha,setFormatoFecha] = useState("");
-    const {titulo,setTipo,mes,year} = UseOperaciones();
+    const [DataSelect2,setDataSelect2] = useState("");
+    const {titulo,setTipo,mes,year,bgCategoerias,colorCategoria,titulosBTN,titulosBTNMovimiento} = UseOperaciones();
     const {mostrarMovimientos,datamovimientos,totalMesAño,totalMesAñoPagados,totalMesAñoPendientes} = useMovimientosStore();
     const id = UseUsuarioStore(state=>state.idusuario);
+    const mostrarcuentas = UseCuentas(state=>state.mostrarCuentas);
+    const mostrarcategorias = UseCategorias(state=>state.mostrarcategorias);
+    const {statetipo2,setStateTipo2,openRegister,setOpenRegister,accion,setAccion} = UseContext1();
+      const cambiarTipo = (p)=>{
+        setTipo(p);
+        setStateTipo2(!statetipo2);
+      }
+      const open=()=>{
+        setOpenRegister(!openRegister)
+        setAccion("Nuevo");
+        setDataSelect2([]);
+      }
     useQuery({queryKey:["mostrar movimiento por semestre"],queryFn:()=>mostrarMovimientos({año:year,mes:mes,idusuario:id,tipocategoria:titulo})});
+    useQuery({queryKey:["mostrar cuentas",{iduser:id}],queryFn:()=>mostrarcuentas({idusuario:id})});
+    useQuery({queryKey:["mostrar categorias"],queryFn:()=>mostrarcategorias({idusario:id,tipo:titulo})});
+    const colorbg = titulo === "g" ? "red":"green";
 return (
     <Container>
     <header className='header'>
     <Header2/> 
     </header>
+    <section className='tipo'>
+      <ContentFilters>
+      <BTNDesplegable2 text={titulosBTNMovimiento} inputcolor={bgCategoerias} textcolor={colorCategoria}/>
+      {statetipo2 && <ListaMenuDespegable data={DataDesplegableMovimientos} acciones={(p)=>cambiarTipo(p)}/>}
+      </ContentFilters>
+      <ContentFiltro>
+      <BTNBoton bgcolor={bgCategoerias} textcolor={colorCategoria} icono={<v.agregar/>} funcion={open}/>
+      </ContentFiltro>
+    </section>
     <section className='totales'>
     <ContentsTotales title={titulo === "g" ? "Gastos Pendientes" : "Ingresos pendientes"} 
                      icono={<v.flechaarribalarga/>} 
-                      total={totalMesAñoPendientes}/>
+                     total={totalMesAñoPendientes}
+                     color={colorbg}/>
     <ContentsTotales title={titulo === "g" ? "Gastos Pagados" : "Ingresos pendientes"}
                      icono={<v.flechaabajolarga/>}
-                      total={totalMesAñoPagados}/>
+                      total={totalMesAñoPagados}
+                      color={colorbg}/>
     <ContentsTotales title="Total"
                      icono={<v.balance/>}
-                     total={totalMesAño}/>
+                     total={totalMesAño}
+                     color={colorbg}/>
     </section>
     <section className='calendario'>
     <CalendarioLineal value={value} setValue={setValue} setFormatoFecha={setFormatoFecha}/>
@@ -61,14 +91,22 @@ align-items:center;
 
     }
 }
+.tipo{
+    width:100%;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 10px;
+}
 .totales{
     width:100%;
-    height:50px;
+    height:60px;
     /*background-color: rgb(229,67,26,0.14);*/
     display: flex;
     align-items: center;
     justify-content: center;
     gap:10px;
+   
+
     @media (max-width:768px) {
         flex-direction: column;
         height:300px;

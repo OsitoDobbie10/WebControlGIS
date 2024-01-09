@@ -1,30 +1,28 @@
 import React from 'react'
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import {v,BtnCirculas,UseContext1,ListaMenuDespegable,DesplegableUser} from "../../index";
+import {v,BtnCirculas,UseContext1,ListaMenuDespegable,
+        DesplegableUser,Icono,ColorContext,ListaItem} from "../../index";
 const DataUser2 = () => {
     const {token,abrir2,setAbrir2} = UseContext1();
-    const {user} = token;
-    const cerrar = useNavigate();
+    //const {user} = token;
+    const cerrar2 = useNavigate();
     const abrirmenu2 = ()=>{
         setAbrir2(!abrir2);
     }
+    
     const funciones2 = (tipo)=>{
-        switch (tipo) {
-            case "cerrarsesion":
-                sessionStorage.removeItem("tokem");
-                cerrar("/");
-                alert("Cerrar")
-                break;
-            case "configuracion":
-                cerrar("/configurar")
-                break;
-            case "miperfil":
-                cerrar("/miperfil");
-                break;
-            default:
-                break;
-        }
+       if(tipo==="miperfil"){
+        //alert("Redireccion a mi perfil")
+        cerrar2("/miperfil");
+       }else if(tipo==="configuracion"){
+        //alert("Redireccion a mi configuracion")
+        cerrar2("/configurar");
+       }else if(tipo==="cerrarsesion"){
+        alert("Cerrar secion")
+        sessionStorage.removeItem("token");
+        cerrar2("/");
+       }
     }
   return (
     <Container onClick={abrirmenu2}>
@@ -43,8 +41,8 @@ const DataUser2 = () => {
     <span className="nombre">
      Conectado
     </span>
-    {
-        abrir2 && ( <ListaMenuDespegable data={DesplegableUser} acciones={(tipo)=>funciones2(tipo)}/>)
+    {   
+        abrir2 && (<ListaItem data={DesplegableUser} acciones={(tipo)=>funciones2(tipo)}/>) 
     }
    
 </Container>
@@ -90,5 +88,6 @@ margin: 15px;
     text-overflow: ellipsis;
     word-wrap:break-word;
 }
+
 `
 export default DataUser2

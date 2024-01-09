@@ -45,6 +45,7 @@ const ContextLogin1 = ({children}) => {
     const [openRegister,setOpenRegister] = useState(false);
     const [accion,setAccion] = useState("");
     const [abrir2,setAbrir2] = useState(false);
+    const [statetipo2,setStateTipo2] = useState(false);
   return (
     <ThemeContext.Provider value={{
         theme,
@@ -80,7 +81,8 @@ const ContextLogin1 = ({children}) => {
         statetipo,setStadeTipo,
         openRegister,setOpenRegister,
         accion,setAccion,
-        abrir2,setAbrir2
+        abrir2,setAbrir2,
+        statetipo2,setStateTipo2
     }}>
       {children}
     </ThemeContext.Provider>

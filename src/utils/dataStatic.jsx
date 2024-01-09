@@ -10,7 +10,7 @@ import {TbPig} from "react-icons/tb"
 
 export const DesplegableUser = [
   {
-    text: "Mi perfil 2",
+    text: "Mi perfil",
     icono: <v.iconoUser/>,
     tipo: "miperfil",
   },
@@ -38,6 +38,21 @@ export const DataDesplegableTipo = [
     color: v.colorIngresos,
     tipo: "i",
     bgcolor:v.colorbgGastos
+  },
+];
+
+export const DataDesplegableMovimientos = [
+  {
+    text: "Gastos",
+    color:  v.colorGastos,
+    tipo: "g",
+    bgcolor:  v.colorbgGastos,
+  },
+  {
+    text: "Ingresos",
+    color: v.colorIngresos,
+    tipo: "i",
+    bgcolor:  v.colorbgingresos,
   },
 ];
 

@@ -2,11 +2,11 @@ import styled from "styled-components";
 import React from 'react'
 import {Icono,ColorContext} from "../../index"
 const ItemMenuDesplegable = ({item,acciones}) => {
-  const {text,icono,tipo} = item;
+  const {text,icono,tipo,color} = item;
   return (
     <Container onClick={acciones}>
       <Icono>{icono}</Icono>
-      <ColorContext $alto="12px" $ancho="12px" $color={item.color} />
+      <ColorContext $alto="12px" $ancho="12px" $color={color} />
       <span>{text}</span>
     </Container>
   )

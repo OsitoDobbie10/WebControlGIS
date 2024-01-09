@@ -1,14 +1,18 @@
 import styled from 'styled-components'
-import {v} from "../../index";
-const BTNdesplegable = ({text,inputcolor,textcolor,funcion}) => {
-  return (
-    <Container $inputcolor={inputcolor} $textcolor={textcolor} onClick={funcion}>
+import {v,UseContext1} from "../../index";
+const BTNDespegable2 = ({text,inputcolor,textcolor})=>{
+const {statetipo2,setStateTipo2} = UseContext1();
+const changeDat = ()=>{
+    setStateTipo2(!statetipo2);
+      }
+return(
+    <Container $inputcolor={inputcolor} $textcolor={textcolor} onClick={changeDat}>
     <span className='containerText' >
      {<v.iconoFlechabajo/>}
      <h6>{text}</h6>
     </span>
     </Container>
-  )
+)    
 }
 const Container = styled.div`
 display:flex;
@@ -26,4 +30,4 @@ position: relative;
   align-items: center;
 }
 `;
-export default BTNdesplegable
+export default BTNDespegable2

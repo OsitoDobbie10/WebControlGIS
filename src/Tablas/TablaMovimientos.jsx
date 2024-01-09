@@ -65,10 +65,11 @@ export function TablaMovimientos({
                       bgcolor={item.estado == "1" ? "#69e673" : "#b3b3b3"}
                     ></Situacion>
                     </th>
-                    <td  data-title="Fecha" >{item.fecha}</td>
-                    <td data-title="Descripcion" >{item.descripcion}</td>
-                    <td data-title="Categoria" >{item.categoria}</td>
-                    <td data-title="Cuenta">{item.cuenta}</td>
+                    <td scope="Fecha" >{item.fecha}</td>
+                    <td scope="row" >{item.descripcion}</td>
+                    <td scope="row" >{item.categoria}</td>
+                    <td scope="row">{item.cuenta}</td>
+                    <td scope="row">{item.valorymoneda}</td>
                     <td data-title="Acciones">
                       <ContentAccionesTabla
                         funcionEditar={() => editar(item)}

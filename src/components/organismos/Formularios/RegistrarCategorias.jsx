@@ -38,7 +38,7 @@ export function RegistrarCategorias({ onClose, dataSelect, accion }) {
         descripccion: data.descripcion,
         color: currentColor,
         icono: emojiselect,
-        id: dataSelect.id,
+        id: dataSelect.id + 1,
         idusuario:usuarios.id,
         tipo: tipo,
       };
@@ -62,6 +62,7 @@ export function RegistrarCategorias({ onClose, dataSelect, accion }) {
       try {
         setEstadoproceso(true);
         console.log(p);
+        console.log(dataSelect);
         await insertarcategorias(p);
         setEstadoproceso(false);
         onClose();

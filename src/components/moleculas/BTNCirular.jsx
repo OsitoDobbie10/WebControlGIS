@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-const BTNCirular = ({icono}) => {
+const BTNCirular = ({icono,color}) => {
   return (
     <Container>
       <span>{icono}</span>
@@ -8,7 +8,7 @@ const BTNCirular = ({icono}) => {
   )
 }
 const Container = styled.div`
-background-color:green;
+background-color:${(props)=>props.color};
 min-width:50px;
 min-height: 50px;
 font-size: 25px;

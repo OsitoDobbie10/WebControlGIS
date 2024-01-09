@@ -15,7 +15,7 @@ const ContentsTotales = ({ color, total, title, icono }) => {
         </span>
       </div>
       <div className="contentIcono">
-      <BTNCirular icono={icono}/>
+      <BTNCirular icono={icono} color={color}/>
       </div>
     </Container>
   )
